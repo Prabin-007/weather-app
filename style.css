@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Default background */
+    background-image: url('https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=2574&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-image 0.5s ease-in-out; /* Smooth fade effect */
+}
+
+/* Dark Overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.app-wrap {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* The Glass Effect */
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: 0.4s ease;
+}
+
+header {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 15px;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    color: #fff;
+    font-size: 18px;
+    transition: 0.4s;
+}
+
+.search-box::placeholder {
+    color: #ddd;
+}
+
+.search-box:focus {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+}
+
+.location .city {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.location .date {
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.current {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.current .temp {
+    font-size: 80px;
+    font-weight: 700;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.current .weather {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.current .weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.current .hi-low {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.error-msg {
+    color: #ffcccc;
+    margin-top: 15px;
+    text-align: center;
+    background: rgba(255, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.footer-text {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    letter-spacing: 1px;
+}
